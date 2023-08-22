@@ -1,7 +1,7 @@
 # This Jenkins file run node.js project by pipeline on localhost:4000 on slave behind the proxy
-### Need install java 11, npm on slave
+### Need install java 11, npm, make dir for jenkins, openssh, login and pass (or rsa) on slave
 
-# jenkins-test
+# Docker containers
 ## Run docker:dind
 ```
 docker run --name jenkins-docker --rm --detach \
@@ -34,8 +34,8 @@ docker run \
   --env JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true" \
   myjenkins-v0.0.1 
 ```
+# Settings
 ### Go to localhost:8080
-
 if unlock didnot appeare got to 
 ```
 cd /var/lib/docker/volumes/jenkins-data/secrets/
@@ -45,17 +45,7 @@ and
 cat initialAdminPassword
 ```
 login: admin
-
-
-### Plugins install by hand
+### Plugins install by hand in settings
 Docker,
 Docker pipeline,
 Blue Ocean
-
-### To add slave
-
-install java 11 on host
-make dir for jenkins
-
-make ssh add login and pass
-
