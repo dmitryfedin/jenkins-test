@@ -4,6 +4,6 @@ node('slave-171'){
 	sh 'npm start'
     }
     stage('Test') {
-	sh 'npm '
+	sh 'echo stop'
     }
 }
