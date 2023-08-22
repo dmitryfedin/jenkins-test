@@ -4,7 +4,7 @@ node('slave-171'){
 	sh 'forever start index.js'
     }
     stage('Test') {
-        sh 'curl http://localhost:4000'
+        sh 'curl http://130.100.7.171:4000'
 	sh 'forever stopall'
     }
 }
