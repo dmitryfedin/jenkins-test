@@ -1,15 +1,8 @@
-pipeline {
-    agent {
-        docker {
-            image 'node:18.17.1-alpine3.18' 
-            args '-p 3000:3000' 
-        }
+node('slave-171'){
+    stage('Build') {
+        sh '''echo build steps'''
     }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
+    stage('Test') {
+        sh '''echo test steps'''
     }
 }

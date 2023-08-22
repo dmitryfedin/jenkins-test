@@ -31,8 +31,9 @@ docker run \
   --volume "$HOME":/home \
   --restart=on-failure \
   --env JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true" \
-  myjenkins-blueocean:2.401.3-1 
+  myjenkins-v0.0.1 
 
+# Unlock didnot appeare
 # log and pass
 # cat by root (sudo su)
 log:	admin
@@ -40,3 +41,6 @@ pass:	cat /var/lib/docker/volumes/jenkins-data/secrets/initialAdminPassword
 
 
 # then need to install all plagins by hand
+# Docker
+# Docker pipeline
+# Blue Ocean
