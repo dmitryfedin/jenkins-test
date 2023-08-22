@@ -44,3 +44,13 @@ pass:	cat /var/lib/docker/volumes/jenkins-data/secrets/initialAdminPassword
 # Docker
 # Docker pipeline
 # Blue Ocean
+
+
+# To add slave
+
+install java 11 on host
+make dir for jenkins
+
+make ssh 
+add log and pass
+
