@@ -3,8 +3,8 @@ node('slave-171'){
 	git url: 'https://github.com/dmitryfedin/jenkins-test', branch: 'main'
     }
     stage('Test') {
-	sh './jenkins/deliver.sh'
+	sh './deliver.sh'
         input message: 'Finished using the web site? (Click "Proceed" to continue)'
-        sh './jenkins/kill.sh'
+        sh './kill.sh'
     }
 }
