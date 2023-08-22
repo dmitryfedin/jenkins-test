@@ -1,5 +1,5 @@
-# This Jenkins file run node.js project by pipeline on localhost:4000 on slave behind the proxy
-### Need install java 11, npm, make dir for jenkins, openssh, login and pass (or rsa) on slave
+# This Jenkins file runs node.js project by pipeline on localhost:4000 on slave behind the proxy
+### Need to install java 11, npm, make dir for jenkins, openssh, login and pass (or rsa) on the slave
 
 # Docker containers
 ## Run docker:dind
@@ -36,7 +36,7 @@ docker run \
 ```
 # Settings
 ### Go to localhost:8080
-if unlock didnot appeare got to 
+if unlock didnot display, use 
 ```
 cd /var/lib/docker/volumes/jenkins-data/secrets/
 ```
