@@ -1,7 +1,9 @@
+# This Jenkins file run node.js project by pipeline on localhost:4000 on slave behind the proxy
+### Need install java 11, npm on slave
+
 # jenkins-test
-
-run docker:dind
-
+## Run docker:dind
+```
 docker run --name jenkins-docker --rm --detach \
   --privileged --network jenkins --network-alias docker \
   --env DOCKER_TLS_CERTDIR=/certs \
@@ -9,14 +11,13 @@ docker run --name jenkins-docker --rm --detach \
   --volume jenkins-data:/var/jenkins_home \
   --publish 3000:3000 --publish 5000:5000 --publish 2376:2376 \
   docker:dind --storage-driver overlay2
-
-
-# run jenkins
-# Dockerfile in rep
-
+```
+## Run Jenkins
+### Dockerfile in rep
+```
 docker build -t jenkins-v0.0.1 .
-
-
+```
+```
 docker run \
   --name jenkins-blueocean \
   --detach \
@@ -32,25 +33,29 @@ docker run \
   --restart=on-failure \
   --env JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true" \
   myjenkins-v0.0.1 
+```
+### Go to localhost:8080
 
-# Unlock didnot appeare
-# log and pass
-# cat by root (sudo su)
-log:	admin
-pass:	cat /var/lib/docker/volumes/jenkins-data/secrets/initialAdminPassword
+if unlock didnot appeare got to 
+```
+cd /var/lib/docker/volumes/jenkins-data/secrets/
+```
+and 
+```
+cat initialAdminPassword
+```
+login: admin
 
 
-# then need to install all plagins by hand
-# Docker
-# Docker pipeline
-# Blue Ocean
+### Plugins install by hand
+Docker,
+Docker pipeline,
+Blue Ocean
 
-
-# To add slave
+### To add slave
 
 install java 11 on host
 make dir for jenkins
 
-make ssh 
-add log and pass
+make ssh add login and pass
 
